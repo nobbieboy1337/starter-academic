@@ -24,22 +24,22 @@ date_format: Jan 2006
 experience:
   - title: Synack Red Team Member at Synack
     company: Synack
-    company_url: ''
+    company_url: 'https://www.synack.com/'
     location: California
     date_start: '2013-01-01'
     date_end: ''
     description: |2-
         Responsibilities include:
         
-        * Analysing
-        * Modelling
-        * Deploying
+        * Penetration testing
+        * A crowdsourced network
+        * White-hat hackers
         
-  - title: Professor
-    company: University X
+  - title: Security Researcher
+    company: Hackerone
     company_url: ''
     location: California
-    date_start: '2016-01-01'
-    date_end: '2016-12-31'
-    description: Taught electronic engineering and researched semiconductor physics.
+    date_start: '2012-01-01'
+    date_end: ''
+    description: HackerOne is a vulnerability coordination and bug bounty platform that connects businesses with penetration testers and cybersecurity researchers.
 ---
