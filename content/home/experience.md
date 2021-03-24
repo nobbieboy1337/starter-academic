@@ -23,10 +23,10 @@ date_format: Jan 2006
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 experience:
   - title: Synack Red Team Member at Synack
-    company: GenCoin
+    company: Synack
     company_url: ''
     location: California
-    date_start: '2017-01-01'
+    date_start: '2013'
     date_end: ''
     description: |2-
         Responsibilities include:
