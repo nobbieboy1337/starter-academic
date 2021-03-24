@@ -26,7 +26,7 @@ experience:
     company: Synack
     company_url: ''
     location: California
-    date_start: '2013'
+    date_start: '2013-01-01'
     date_end: ''
     description: |2-
         Responsibilities include:
