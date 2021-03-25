@@ -19,7 +19,7 @@ feature:
 - description: 90%
   icon: Web
   icon_pack: fab
-  name: R
+  name: Web
 - description: 100%
   icon: chart-line
   icon_pack: fas
