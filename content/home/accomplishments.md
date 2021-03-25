@@ -33,15 +33,15 @@ item:
   url: ""
 - certificate_url: 
   date_end: ""
-  date_start: "2018-03-01"
+  date_start: "2020-03-12"
   description: 
-  organization: edX
-  organization_url: https://www.edx.org
+  organization: 
+  organization_url: 
   title: Practical Ethical Hacking - The Complete Course
   url: 
 - certificate_url: 
-  date_end: "2017-12-21"
-  date_start: "2017-07-01"
+  date_end: "2020-02-01"
+  date_start: "2020-03-01"
   description: ""
   organization: 
   organization_url: 
