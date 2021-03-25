@@ -25,26 +25,26 @@ date_format: Jan 2006
 item:
 - certificate_url: https://www.coursera.org
   date_end: ""
-  date_start: "2018-10-01"
+  date_start: "2020-10-01"
   description: ""
-  organization: Coursera
-  organization_url: https://www.coursera.org
+  organization: 
+  organization_url: 
   title: A Practical Hands-On Burp Suite Training Course
   url: ""
-- certificate_url: https://www.edx.org
+- certificate_url: 
   date_end: ""
   date_start: "2018-03-01"
-  description: Formulated informed blockchain models, hypotheses, and use cases.
+  description: 
   organization: edX
   organization_url: https://www.edx.org
   title: Practical Ethical Hacking - The Complete Course
-  url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
-- certificate_url: https://www.datacamp.com
+  url: 
+- certificate_url: 
   date_end: "2017-12-21"
   date_start: "2017-07-01"
   description: ""
-  organization: DataCamp
-  organization_url: https://www.datacamp.com
+  organization: 
+  organization_url: 
   title: 'Web Application Security and Penetration Testing'
   url: ""
 ---
