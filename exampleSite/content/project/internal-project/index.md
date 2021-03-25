@@ -2,7 +2,7 @@
 title: Internal Project
 summary: An example of using the in-built project page.
 tags:
-- Project Recom
+- Project Recon
 date: "2021-03-21T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).
