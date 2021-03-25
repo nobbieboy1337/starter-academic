@@ -17,17 +17,18 @@ subtitle:
 # - For available icons, see: https://wowchemy.com/docs/page-builder/#icons
 feature:
 - description: 90%
-  icon: Web
+  icon: WEB-APP 
   icon_pack: fab
-  name: Web
+  name: WEB-APP PENETRATION TESTING
 - description: 100%
   icon: chart-line
   icon_pack: fas
-  name: Statistics
+  name: ANDROID APP PENETRATION TESTING
 - description: 10%
-  icon: camera-retro
+  icon: IOS APP 
   icon_pack: fas
-  name: Photography
+  name: IOS APP PENETRATION TESTING
+
 
 # Uncomment to use emoji icons.
 #- icon: ":smile:"
