@@ -29,7 +29,7 @@ item:
   description: ""
   organization: Coursera
   organization_url: https://www.coursera.org
-  title: Neural Networks and Deep Learning
+  title: A Practical Hands-On Burp Suite Training Course
   url: ""
 - certificate_url: https://www.edx.org
   date_end: ""
@@ -37,7 +37,7 @@ item:
   description: Formulated informed blockchain models, hypotheses, and use cases.
   organization: edX
   organization_url: https://www.edx.org
-  title: Blockchain Fundamentals
+  title: Practical Ethical Hacking - The Complete Course
   url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
 - certificate_url: https://www.datacamp.com
   date_end: "2017-12-21"
