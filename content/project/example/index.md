@@ -9,8 +9,8 @@ date: "2021-03-25T00:00:00Z"
 external_link: ""
 
 image:
-  caption: Photo by rawpixel on Unsplash
-  focal_point: Smart
+  caption: 
+  focal_point: 
 
 links:
 - icon: twitter
