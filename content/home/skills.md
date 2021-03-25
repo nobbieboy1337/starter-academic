@@ -16,15 +16,15 @@ subtitle:
 # - Add/remove as many `feature` blocks below as you like.
 # - For available icons, see: https://wowchemy.com/docs/page-builder/#icons
 feature:
-- description: 90%
+- description: 100%
   icon: WEB-APP 
   icon_pack: fab
   name: WEB-APP PENETRATION TESTING
-- description: 100%
-  icon: chart-line
+- description: 90%
+  icon: ANDROID
   icon_pack: fas
   name: ANDROID APP PENETRATION TESTING
-- description: 10%
+- description: 80%
   icon: IOS APP 
   icon_pack: fas
   name: IOS APP PENETRATION TESTING
