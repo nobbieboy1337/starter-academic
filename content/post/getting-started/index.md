@@ -1,18 +1,43 @@
 ---
-title: Welcome to Wowchemy, the website builder for Hugo
-subtitle: Welcome 👋 We know that first impressions are important, so we've populated your new site with some initial content to help you get familiar with everything in no time.
+title: Exploiting SSRF like a Boss — Escalation of an SSRF to Local File Read!
+subtitle: Hi Guys!
+Greetings everyone! Today I am doing another write-up about one of my best findings. It’s an SSRF — Server Side Request Forgery vulnerability I discovered in a private program.
 
 # Summary for listings and search engines
-summary: Welcome 👋 We know that first impressions are important, so we've populated your new site with some initial content to help you get familiar with everything in no time.
+summary: Hi Guys!
+Greetings everyone! Today I am doing another write-up about one of my best findings. It’s an SSRF — Server Side Request Forgery vulnerability I discovered in a private program.
+In the scope page, the program had few IPs with only Server-Side bugs acceptable in its scope. I picked an IP and started my recon process on it. I found a subdomain https://help.redacted.com hosted on that IP through Reverse IP scan. I used HackerTarget’s Reverse IP lookup tool “http://api.hackertarget.com/reverseiplookup/?q={IP}”
+The subdomain was running a Jira instance. I quickly remembered the 
+Alyssa Herrera
+’s article about SSRF Exploitation in Jira instances. I checked the version of the Jira and it seems vulnerable to the SSRF.
+https://help.redacted.com/plugins/servlet/oauth/users/icon-uri?consumerUri=http://google.com
 
+Now I was able to render any webpage through that vulnerable endpoint or I could have converted it into XSS by loading an external page but as I have told earlier that the company was only interested in Server-Side and network related issues so I had to dig more.
+None of the protocols i.e. gopher://, file://, ldap:// or ftp:// were working except http://. It was an azure instance so I tried to fetch the metadata file of the instance from the uri: https://help.redacted.com/plugins/servlet/oauth/users/icon-uri?consumerUri=http://169.254.169.254/metadata/v1/maintenance but I got nothing but a blank JSON response.
+
+Now I needed to think out of the box. I started playing with the endpoint. I tried to load localhost (127.0.0.1) from the uri and it loaded the main page. An idea clicked in my mind that there might be some services were left running on internal ports. I started by the most common port 8080. And then as I thought, I was welcomed by GlassFish server’s default page.
+
+After seeing that I quickly reached to the default administration console at Port 4848. It was the login page of GlassFish server.
+
+I searched for the GlassFish exploits and hopefully, I found a GET based exploit: “https://www.exploit-db.com/exploits/39241/”
+
+I crafted that payload:
+https://help.redacted.com/plugins/servlet/oauth/users/icon-uri?consumerUri=http://127.0.0.1:4848/theme/META-INF/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/etc/passwd
+But it didn't work!!
+
+ got really disappointed and I was about to give up. But then I just noticed that there is url-encoding in that exploit and when it is passed through the browser it gets decoded so I may need to double encode it to pass the correct request on to the GlassFish server.
+And our final payload was:
+https://help.redacted.com/plugins/servlet/oauth/users/icon-uri?consumerUri=http://127.0.0.1:4848/theme/META-INF%2f%25c0%25ae%25c0%25ae%2f%25c0%25ae%25c0%25ae%2f%25c0%25ae%25c0%25ae%2f%25c0%25ae%25c0%25ae%2f%25c0%25ae%25c0%25ae%2f%25c0%25ae%25c0%25ae%2f%25c0%25ae%25c0%25ae%2f%25c0%25ae%25c0%25ae%2f%25c0%25ae%25c0%25ae%2f%25c0%25ae%25c0%25ae%2fetc%2fpasswd
+
+And resultantly, this simple HTTP-Protocol based SSRF was escalated to a local file read by exploiting an internal service.
 # Link this post with a project
 projects: []
 
 # Date published
-date: "2020-12-13T00:00:00Z"
+date: "2021-03-13T00:00:00Z"
 
 # Date updated
-lastmod: "2020-12-13T00:00:00Z"
+lastmod: "2021-03-26T00:00:00Z"
 
 # Is this an unpublished draft?
 draft: false
